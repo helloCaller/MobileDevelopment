@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        
+        <?RUN iOS HOME SCREEN PAGES IN FULL SCREEN?>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <?SET APPLE HOME SCREEN ICON?>
+        <link rel="apple-touch-icon" href="images/bardoicon.png">
+    	<link rel="apple-touch-icon-precomposed" href="images/bardoicon.png">
+    	<?SET ANDROID HOME SCREEN ICON?>
+    	<link rel="shortcut icon" sizes="57x57" href="images/bardoicon.png">
+    </head>
+    <body>
+        
+        <div data-role="page" id="page01">
+            <div data-role="header">
+                <h1>About Bardo</h1>
+            </div>
+            <div data-role="content">
+                 <ul data-role="listview">
+                    <li><a href="#page02">CBC</a></li>
+                    <li><a href="#page03">The Star</a></li>
+                    <li><a href="#page04">View my life</a></li>
+                    <li onclick="toggleFullScreen()" >Toggle fullscreen</li>	
+                </ul>
+               
+            </div>
+            
+            <div data-role="footer">
+                <h4><a href="#page01">HOME</a></h4>
+            </div>
+        </div>
+        
+        <div data-role="page" id="page02">
+            
+            <div data-role="header">
+                <h1>Choose A News Source</h1>
+            </div>
+            
+            <div data-role="content">
+                <div id="feed"></div>
+
+            	 <div data-role="footer">
+                    <h4><a href="#page01">HOME</a></h4>
+                </div>
+            </div>
+        
+    
+        <div data-role="page" id="page02">
+            <div data-role="header">
+                <h1>About Bardo</h1>
+            </div>
+            <div data-role="content">
+               <div id="feed"></div>
+            </div>
+            
+            <div data-role="footer">
+                <h4><a href="#page01">HOME</a></h4>
+            </div>
+        </div>
+    
+    
+        
+        <div data-role="page" id="page03">
+            <div data-role="header"> <h1>My details </h1> </div>
+            <div data-role="content">
+            <p id="thedate" > </p>
+                <form>
+                    <label for="Name">My Name</label>
+                    <input type="text" name="name" id="name" required>
+                    <label for="flip-sw">Sex</label>
+					<select name="flip-sw" id="flip-sw" data-role="slider">
+						<option value="off">Male</option>
+						<option value="on">Female</option>
+					</select> 
+					<br> <br>
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" required>
+                    <p> <label for="age">My age</label>
+                        <input type="range" name="age" id="age" min="1" max="100" value="40" step="1" data-highlight="true"> </p>
+                                            <label for="date">My birthday</label>
+                    <input name="date" id="date" type="date" placeholder="MM-DD" required>
+                    <p> <label for="weight">My weight (in kilos)</label>
+                    	<input type="range" name="weight" id="weight" min="30" max="200" value="70" step="1" data-highlight="true"> </p>                     
+                    <p> <label for="height">My height (in cm)</label>
+                    	<input type="range" name="height" id="height" min="100" max="220" value="170" step="1" data-highlight="true"> </p>           
+					<p> <label for="checkbox">I am a smoker</label>
+                        <input type="checkbox" name="agree" id="checkbox" value="yes"> </p>
+                    <p> <input type="submit" value="Submit"> </p>
+                </form>
+            </div>
+            <div data-role="footer">
+                <h4><a href="#page01">HOME</a></h4>
+            </div>
+        </div>
+        <?ADD A 4TH PAGE HERE?>
+        
+    <div data-role="page" id="page04">
+
+      <canvas id="my-canvas">
+      <script type="text/javascript">    
+          
+   google.load("feeds", "1")
+
+var feedcontainer=document.getElementById("feed")
+var feedurl="http://rss.cbc.ca/lineup/politics.xml"
+var feedlimit=10
+var rssoutput="<h2>Latest CBC News:</h2><ul>"
+
+function rssfeedsetup(){
+var feedpointer=new google.feeds.Feed(feedurl)
+feedpointer.setNumEntries(feedlimit)
+feedpointer.load(displayfeed)
+}
+          
+function displayfeed(result){
+if (!result.error){
+var thefeeds=result.feed.entries
+for (var i=0; i<thefeeds.length; i++)
+rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+rssoutput+="</ul>"
+feedcontainer.innerHTML=rssoutput
+}
+else
+alert("Error fetching feeds!")
+}
+
+    window.onload=function(){
+rssfeedsetup()
+}  
+    
+		
+      </script>
+      
+        </div>
+    </body>
+</html>
