@@ -23,12 +23,12 @@
         
         <div data-role="page" id="page01">
             <div data-role="header">
-                <h1>About Bardo</h1>
+                <h1>Choose Your Political News Source</h1>
             </div>
             <div data-role="content">
                  <ul data-role="listview">
                     <li><a href="#page02">CBC</a></li>
-                    <li><a href="#page03">The Star</a></li>
+                    <li><a href="#page03">Maclean's</a></li>
                     <li><a href="#page04">View my life</a></li>
                     <li onclick="toggleFullScreen()" >Toggle fullscreen</li>	
                 </ul>
@@ -47,20 +47,23 @@
             </div>
             
             <div data-role="content">
-                <div id="feed"></div>
+                <div id="cbcFeed"></div>
 
             	 <div data-role="footer">
                     <h4><a href="#page01">HOME</a></h4>
                 </div>
             </div>
+        </div>
         
     
-        <div data-role="page" id="page02">
+        <div data-role="page" id="page03">
+            
             <div data-role="header">
-                <h1>About Bardo</h1>
+                <h1>Choose A News Source</h1>
             </div>
+            
             <div data-role="content">
-               <div id="feed"></div>
+               <div id="macFeed"></div>
             </div>
             
             <div data-role="footer">
@@ -70,7 +73,7 @@
     
     
         
-        <div data-role="page" id="page03">
+        <div data-role="page" id="page04">
             <div data-role="header"> <h1>My details </h1> </div>
             <div data-role="content">
             <p id="thedate" > </p>
@@ -111,31 +114,64 @@
           
    google.load("feeds", "1")
 
-var feedcontainer=document.getElementById("feed")
-var feedurl="http://rss.cbc.ca/lineup/politics.xml"
-var feedlimit=10
-var rssoutput="<h2>Latest CBC News:</h2><ul>"
+var CBC = {   
+ "feedcontainer": document.getElementById("cbcFeed"),
+ "feedurl":"http://rss.cbc.ca/lineup/politics.xml",
+ "feedlimit": 10,
+ "rssoutput":"<h2>Latest CBC News:</h2><ul>"
+}
 
-function rssfeedsetup(){
-var feedpointer=new google.feeds.Feed(feedurl)
-feedpointer.setNumEntries(feedlimit)
-feedpointer.load(displayfeed)
+var Macleans = {
+"feedcontainer": document.getElementById("macFeed"),
+ "feedurl":"http://www.macleans.ca/politics/feed/",
+ "feedlimit": 10,
+ "rssoutput":"<h2>Latest From Maclean's:</h2><ul>"
+}
+    
+
+
+function cbcrssfeedsetup(){
+var feedpointer=new google.feeds.Feed(CBC.feedurl)
+feedpointer.setNumEntries(CBC.feedlimit)
+feedpointer.load(cbcdisplayfeed)
+
 }
           
-function displayfeed(result){
+function cbcdisplayfeed(result){
 if (!result.error){
 var thefeeds=result.feed.entries
 for (var i=0; i<thefeeds.length; i++)
-rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
-rssoutput+="</ul>"
-feedcontainer.innerHTML=rssoutput
+CBC.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+CBC.rssoutput+="</ul>"
+CBC.feedcontainer.innerHTML=CBC.rssoutput
+}
+else
+alert("Error fetching feeds!");
+}
+
+function macleansrssfeedsetup(){
+var feedpointer=new google.feeds.Feed(Macleans.feedurl);
+feedpointer.setNumEntries(Macleans.feedlimit);
+feedpointer.load(macleansdisplayfeed);
+
+}
+function macleansdisplayfeed(result){
+if (!result.error){
+var thefeeds=result.feed.entries
+for (var i=0; i<thefeeds.length; i++)
+Macleans.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+Macleans.rssoutput+="</ul>"
+Macleans.feedcontainer.innerHTML=Macleans.rssoutput
 }
 else
 alert("Error fetching feeds!")
 }
 
+
     window.onload=function(){
-rssfeedsetup()
+cbcrssfeedsetup();
+        macleansrssfeedsetup();
+        
 }  
     
 		
