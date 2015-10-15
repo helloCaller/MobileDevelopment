@@ -29,7 +29,7 @@
                  <ul data-role="listview">
                     <li><a href="#page02">CBC</a></li>
                     <li><a href="#page03">Maclean's</a></li>
-                    <li><a href="#page04">View my life</a></li>
+                    <li><a href="#page04">Globe and Mail</a></li>
                     <li onclick="toggleFullScreen()" >Toggle fullscreen</li>	
                 </ul>
                
@@ -71,43 +71,26 @@
             </div>
         </div>
     
-    
-        
-        <div data-role="page" id="page04">
-            <div data-role="header"> <h1>My details </h1> </div>
-            <div data-role="content">
-            <p id="thedate" > </p>
-                <form>
-                    <label for="Name">My Name</label>
-                    <input type="text" name="name" id="name" required>
-                    <label for="flip-sw">Sex</label>
-					<select name="flip-sw" id="flip-sw" data-role="slider">
-						<option value="off">Male</option>
-						<option value="on">Female</option>
-					</select> 
-					<br> <br>
-                    <label for="email">email</label>
-                    <input type="email" name="email" id="email" required>
-                    <p> <label for="age">My age</label>
-                        <input type="range" name="age" id="age" min="1" max="100" value="40" step="1" data-highlight="true"> </p>
-                                            <label for="date">My birthday</label>
-                    <input name="date" id="date" type="date" placeholder="MM-DD" required>
-                    <p> <label for="weight">My weight (in kilos)</label>
-                    	<input type="range" name="weight" id="weight" min="30" max="200" value="70" step="1" data-highlight="true"> </p>                     
-                    <p> <label for="height">My height (in cm)</label>
-                    	<input type="range" name="height" id="height" min="100" max="220" value="170" step="1" data-highlight="true"> </p>           
-					<p> <label for="checkbox">I am a smoker</label>
-                        <input type="checkbox" name="agree" id="checkbox" value="yes"> </p>
-                    <p> <input type="submit" value="Submit"> </p>
-                </form>
+         <div data-role="page" id="page04">
+            
+            <div data-role="header">
+                <h1>Choose A News Source</h1>
             </div>
+            
+            <div data-role="content">
+               <div id="globeandmailFeed"></div>
+            </div>
+            
             <div data-role="footer">
                 <h4><a href="#page01">HOME</a></h4>
             </div>
         </div>
+    
+        
+
         <?ADD A 4TH PAGE HERE?>
         
-    <div data-role="page" id="page04">
+  
 
       <canvas id="my-canvas">
       <script type="text/javascript">    
@@ -126,6 +109,13 @@ var Macleans = {
  "feedurl":"http://www.macleans.ca/politics/feed/",
  "feedlimit": 10,
  "rssoutput":"<h2>Latest From Maclean's:</h2><ul>"
+}
+
+var Globeandmail = {
+ "feedcontainer": document.getElementById("globeandmailFeed"),
+ "feedurl":"http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss",
+ "feedlimit": 10,
+ "rssoutput":"<h2>Latest From the Globe and Mail:</h2><ul>"
 }
     
 
@@ -167,10 +157,28 @@ else
 alert("Error fetching feeds!")
 }
 
+function globeandmailrssfeedsetup(){
+var feedpointer=new google.feeds.Feed(Globeandmail.feedurl);
+feedpointer.setNumEntries(Globeandmail.feedlimit);
+feedpointer.load(globeandmaildisplayfeed);
+
+}
+function globeandmaildisplayfeed(result){
+if (!result.error){
+var thefeeds=result.feed.entries
+for (var i=0; i<thefeeds.length; i++)
+Globeandmail.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+Globeandmail.rssoutput+="</ul>"
+Globeandmail.feedcontainer.innerHTML=Globeandmail.rssoutput;
+}
+else
+alert("Error fetching feeds!")
+}
 
     window.onload=function(){
 cbcrssfeedsetup();
-        macleansrssfeedsetup();
+macleansrssfeedsetup();
+globeandmailrssfeedsetup();
         
 }  
     
