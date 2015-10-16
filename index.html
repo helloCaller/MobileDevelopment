@@ -39,21 +39,26 @@
             </div>
             
             <div data-role="footer" data-theme="a">
-                <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">HOME</button></h4>
+               <h6>&#169; 2015 Luke Garwood</h6>
             </div>
         </div>
         
         <div data-role="page" id="page02">
             
             <div data-role="header">
-                <h1>Choose A News Source</h1>
+                <h1>Choose A News Article</h1>
             </div>
             
-            <div data-role="content">
-                <div id="cbcFeed"></div>
+            <div data-role="content" data-theme="a">
+                 <ul data-role="listview">
+                
+                    <div id="cbcFeed"></div>
+                </ul>
+                <p></p>
+            </div>
 
             	 <div data-role="footer">
-                    <h4><a href="#page01">HOME</a></h4>
+                    <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
                 </div>
             </div>
         </div>
@@ -62,30 +67,37 @@
         <div data-role="page" id="page03">
             
             <div data-role="header">
-                <h1>Choose A News Source</h1>
+                <h1>Choose A News Article</h1>
             </div>
             
             <div data-role="content">
-               <div id="macFeed"></div>
+                 <ul data-role="listview">
+                        <div id="macFeed"></div>
+                </ul>
+                <p></p>
             </div>
             
             <div data-role="footer">
-                <h4><a href="#page01">HOME</a></h4>
+                <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
             </div>
         </div>
     
-         <div data-role="page" id="page04">
+         <div data-role="page" data-theme="b" id="page04">
             
-            <div data-role="header">
-                <h1>Choose A News Source</h1>
+            <div data-role="header" data-theme="b">
+                <h1>Choose A News Article</h1>
             </div>
             
-            <div data-role="content">
+            <div data-role="content" data-theme="b">
+                <ul data-role="listview">
+                
                <div id="globeandmailFeed"></div>
+                </ul>
+                <p></p>
             </div>
             
-            <div data-role="footer">
-                <h4><a href="#page01">HOME</a></h4>
+            <div data-role="footer" data-theme="b">
+                <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
             </div>
         </div>
     
@@ -134,7 +146,7 @@ function cbcdisplayfeed(result){
 if (!result.error){
 var thefeeds=result.feed.entries
 for (var i=0; i<thefeeds.length; i++)
-CBC.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+CBC.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title +"</a></li><br>"
 CBC.rssoutput+="</ul>"
 CBC.feedcontainer.innerHTML=CBC.rssoutput
 }
@@ -152,7 +164,7 @@ function macleansdisplayfeed(result){
 if (!result.error){
 var thefeeds=result.feed.entries
 for (var i=0; i<thefeeds.length; i++)
-Macleans.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+Macleans.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
 Macleans.rssoutput+="</ul>"
 Macleans.feedcontainer.innerHTML=Macleans.rssoutput
 }
@@ -170,7 +182,7 @@ function globeandmaildisplayfeed(result){
 if (!result.error){
 var thefeeds=result.feed.entries
 for (var i=0; i<thefeeds.length; i++)
-Globeandmail.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+Globeandmail.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
 Globeandmail.rssoutput+="</ul>"
 Globeandmail.feedcontainer.innerHTML=Globeandmail.rssoutput;
 }
