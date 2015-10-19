@@ -1,205 +1,236 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-        <link rel="stylesheet" href="css/themes/PoliticalParty.min.css" />
-	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        
-        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-        
-        <?RUN iOS HOME SCREEN PAGES IN FULL SCREEN?>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/themes/PoliticalParty.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/politicalparty.css">
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+    <?RUN iOS HOME SCREEN PAGES IN FULL SCREEN?>
         <meta name="apple-mobile-web-app-capable" content="yes">
         <?SET APPLE HOME SCREEN ICON?>
-        <link rel="apple-touch-icon" href="images/bardoicon.png">
-    	<link rel="apple-touch-icon-precomposed" href="images/bardoicon.png">
-    	<?SET ANDROID HOME SCREEN ICON?>
-    	<link rel="shortcut icon" sizes="57x57" href="images/bardoicon.png">
-    </head>
-    <body>
+            <link rel="apple-touch-icon" href="images/bardoicon.png">
+            <link rel="apple-touch-icon-precomposed" href="images/bardoicon.png">
+            <?SET ANDROID HOME SCREEN ICON?>
+                <link rel="shortcut icon" sizes="57x57" href="images/bardoicon.png">
+</head>
+
+<body>
+
+    <div data-role="page" data-theme="a" id="page01">
+        <div data-role="header" data-position="inline">
+            <h1>The Connect</h1>
+        </div>
         
-        <div data-role="page" data-theme="a" id="page01">
-            <div data-role="header" data-position= "inline">
-                <h1>Choose Your Political News Source</h1>
-            </div>
-            <div data-role="content" data-theme="a">
-                 <ul data-role="listview">
-                    <li><a href="#page02">CBC</a></li>
-                    <li><a href="#page03">Maclean's</a></li>
-                    <li><a href="#page04">Globe and Mail</a></li>
-                    <li onclick="toggleFullScreen()" >Toggle fullscreen</li>	
-                </ul>
+        <div data-role="content" data-theme="a">
+            <ul data-role="listview">
+                <h2 style="text-align: center">Choose a news source below</h2>
+                <li>
+                    <a href='#page02' class= "ui-btn ui-icon-arrow-r ui-btn-icon-right"                                 data-transition="pop">
+                        CBC
+                        <img src="img/cbc.svg" alt="cbc logo" class="ui-li-icon">
+                    </a>
+                </li>
+                    <br>
+                <li>
+                    <a href='#page03' class= "ui-btn ui-icon-arrow-r ui-btn-icon-right"                                 data-transition="pop">
+                        Maclean's
+                        <img src="img/macleans.svg" alt="macleans logo" class="ui-li-icon">
+                    </a>
+                </li>
+                    <br>
+                <li>
+                    <a href='#page04' class= "ui-btn ui-icon-arrow-r ui-btn-icon-right"                                 data-transition="pop">
+                        Globe and Mail
+                        <img src="img/globeandmail.svg" alt="globe logo" class="ui-li-icon">
+                    </a>
+                </li> 
+                    <br>
+                
+                <li onclick="toggleFullScreen()">Toggle fullscreen</li>
+            </ul>
+        </div>
+        
+        <div data-role="footer" data-theme="b" class="foot"></div>
+       <div id = "bufferpage01"><p class = "Luke">&#169; 2015 Luke Garwood</p></div>
+        
+        
+    </div>
+    <!-------------->
+    
+    <div data-role="page" data-theme="a" id="page02">
+
+        <div data-role="header" data-theme="a">
+            <h1>Choose A News Article</h1>
+        </div>
+
+        <div data-role="content" data-theme="a">
+            <div id="cbcFeed"></div>
+        </div>
+
+        <div data-role="footer" data-theme="b" class="foot">
+            <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  style= "background: #FFFFFF" onclick = "location.href='#page01'">HOME</button></h4>
+        </div>
+        
+        <div id = "bufferpage02"><p class = "Luke">&#169; 2015 Luke Garwood</p></div>
+        
+    </div>
+   
+
+    <!--    -------------    -->
+
+    <div data-role="page" id="page03" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>Choose A News Article</h1>
+        </div>
+
+        <div data-role="content" data-theme="c">
+            <div id="macFeed"></div>
+        </div>
+
+        <div data-role="footer" data-theme="b" class="foot">
+            <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button></h4>
+        </div>
+        
+         <div id = "bufferpage03"><p class = "Luke">&#169; 2015 Luke Garwood</p></div>
+        
+    </div>
+    <!--    ----------------->
+
+    <div data-role="page" data-theme="b" id="page04">
+
+        <div data-role="header" data-theme="b">
+            <h1>Choose A News Article</h1>
+        </div>
+
+        <div data-role="content" data-theme="b">
+            <ul data-role="listview">
+                <div id="globeandmailFeed"></div>
+        </div>
+
+        <div data-role="footer" data-theme="b" class="foot">
+            <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button></h4>
+        </div>
+            
+         <div id = "bufferpage04"><p class = "Luke">&#169; 2015 Luke Garwood</p></div>
+            
+    </div>
+
+
+
+    <?ADD A 4TH PAGE HERE?>
+
+
+
+        <canvas id="my-canvas">
+            <script type="text/javascript">
+                google.load("feeds", "1")
+
+                function newssource(feedcontainer, feedurl, feedlimit, rssoutput) {
+                    this.feedcontainer = feedcontainer;
+                    this.feedurl = feedurl;
+                    this.feedlimit = feedlimit;
+                    this.rssoutput = rssoutput;
+                }
+
+                var CBC = new newssource(document.getElementById("cbcFeed"), "http://rss.cbc.ca/lineup/politics.xml", 10, "<h2><p>&nbsp; The Latest From CBC News:</p></h2><ul>");
+
+
+
+                var Macleans = new newssource(document.getElementById("macFeed"), "http://www.macleans.ca/politics/feed/", 10, "<h2><p>&nbsp; The Latest From Macleans:</p></h2><ul data-role = 'listview'>");
+
+                var Globeandmail = new newssource(
+                    document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2><p>&nbsp; The Latest From Globe and Mail:</p></h2><ul data-role = 'listview'>");
+
+
+
+                function cbcrssfeedsetup() {
+                    var feedpointer = new google.feeds.Feed(CBC.feedurl)
+                    feedpointer.setNumEntries(CBC.feedlimit)
+                    feedpointer.load(cbcdisplayfeed)
+
+                }
+
+
+                function cbcdisplayfeed(result) {
+                    if (!result.error) {
+                        var thefeeds = result.feed.entries
+                        for (var i = 0; i < thefeeds.length; i++)
+                            CBC.rssoutput += "<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
+                        CBC.rssoutput += "</ul>"
+                        CBC.feedcontainer.innerHTML = CBC.rssoutput
+                    } else
+                        alert("Error fetching feeds!");
+                }
+
+                function macleansrssfeedsetup() {
+                    var feedpointer = new google.feeds.Feed(Macleans.feedurl);
+                    feedpointer.setNumEntries(Macleans.feedlimit);
+                    feedpointer.load(macleansdisplayfeed);
+
+                }
+
+                function macleansdisplayfeed(result) {
+                    if (!result.error) {
+                        var thefeeds = result.feed.entries
+                        for (var i = 0; i < thefeeds.length; i++)
+                            Macleans.rssoutput += "<li><a href='" + thefeeds[i].link + "' data-role =" + "'button' >" + thefeeds[i].title + "</a></li><br>"
+                        Macleans.rssoutput += "</ul>"
+                        Macleans.feedcontainer.innerHTML = Macleans.rssoutput
+                        console.log(Macleans.rssoutput);
+                    } else
+                        alert("Error fetching feeds!")
+                }
+
+                function globeandmailrssfeedsetup() {
+                    var feedpointer = new google.feeds.Feed(Globeandmail.feedurl);
+                    feedpointer.setNumEntries(Globeandmail.feedlimit);
+                    feedpointer.load(globeandmaildisplayfeed);
+
+                }
+
+                function globeandmaildisplayfeed(result) {
+                    if (!result.error) {
+                        var thefeeds = result.feed.entries
+                        for (var i = 0; i < thefeeds.length; i++)
+                            Globeandmail.rssoutput += "<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
+                        Globeandmail.rssoutput += "</ul>"
+                        Globeandmail.feedcontainer.innerHTML = Globeandmail.rssoutput;
+                    } else
+                        alert("Error fetching feeds!")
+                }
+
+                //    window.onload=function(){
+                //cbcrssfeedsetup();
+                //macleansrssfeedsetup();
+                //globeandmailrssfeedsetup();
+                //        
+                //}  
+                $(document).on('pageinit', '#page02', function () {
+                    cbcrssfeedsetup();
+                });
+                $(document).on('pageinit', '#page03', function () {
+                    macleansrssfeedsetup();
+                    $("#macfeed").listview('refresh');
+                });
+                $(document).on('pageinit', '#page04', function () {
+                    globeandmailrssfeedsetup();
+                });
                
+            </script>
+
             </div>
-            
-            <div data-role="footer" data-theme="a">
-               <h6>&#169; 2015 Luke Garwood</h6>
-            </div>
-        </div>
-        
-        <div data-role="page" id="page02">
-            
-            <div data-role="header">
-                <h1>Choose A News Article</h1>
-            </div>
-            
-            <div data-role="content" data-theme="a">
-                 <ul data-role="listview">
-                
-                    <div id="cbcFeed"></div>
-                </ul>
-                <p></p>
-            </div>
+</body>
 
-            	 <div data-role="footer">
-                    <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
-                </div>
-            </div>
-        </div>
-        
-    
-        <div data-role="page" id="page03">
-            
-            <div data-role="header">
-                <h1>Choose A News Article</h1>
-            </div>
-            
-            <div data-role="content">
-                 <ul data-role="listview">
-                        <div id="macFeed"></div>
-                </ul>
-                <p></p>
-            </div>
-            
-            <div data-role="footer">
-                <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
-            </div>
-        </div>
-    
-         <div data-role="page" data-theme="b" id="page04">
-            
-            <div data-role="header" data-theme="b">
-                <h1>Choose A News Article</h1>
-            </div>
-            
-            <div data-role="content" data-theme="b">
-                <ul data-role="listview">
-                
-               <div id="globeandmailFeed"></div>
-                </ul>
-                <p></p>
-            </div>
-            
-            <div data-role="footer" data-theme="b">
-                <h4><button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" style= "background: #908F4F" onclick = "location.href='#page01'">HOME</button></h4>
-            </div>
-        </div>
-    
-        
-
-        <?ADD A 4TH PAGE HERE?>
-        
-  
-
-      <canvas id="my-canvas">
-      <script type="text/javascript">    
-          
-   google.load("feeds", "1")
-
-var CBC = {   
- "feedcontainer": document.getElementById("cbcFeed"),
- "feedurl":"http://rss.cbc.ca/lineup/politics.xml",
- "feedlimit": 10,
- "rssoutput":"<h2>Latest CBC News:</h2><ul>"
-}
-
-var Macleans = {
-"feedcontainer": document.getElementById("macFeed"),
- "feedurl":"http://www.macleans.ca/politics/feed/",
- "feedlimit": 10,
- "rssoutput":"<h2>Latest From Maclean's:</h2><ul>"
-}
-
-var Globeandmail = {
- "feedcontainer": document.getElementById("globeandmailFeed"),
- "feedurl":"http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss",
- "feedlimit": 10,
- "rssoutput":"<h2>Latest From the Globe and Mail:</h2><ul>"
-}
-    
-
-
-function cbcrssfeedsetup(){
-var feedpointer=new google.feeds.Feed(CBC.feedurl)
-feedpointer.setNumEntries(CBC.feedlimit)
-feedpointer.load(cbcdisplayfeed)
-
-}
-          
-function cbcdisplayfeed(result){
-if (!result.error){
-var thefeeds=result.feed.entries
-for (var i=0; i<thefeeds.length; i++)
-CBC.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title +"</a></li><br>"
-CBC.rssoutput+="</ul>"
-CBC.feedcontainer.innerHTML=CBC.rssoutput
-}
-else
-alert("Error fetching feeds!");
-}
-
-function macleansrssfeedsetup(){
-var feedpointer=new google.feeds.Feed(Macleans.feedurl);
-feedpointer.setNumEntries(Macleans.feedlimit);
-feedpointer.load(macleansdisplayfeed);
-
-}
-function macleansdisplayfeed(result){
-if (!result.error){
-var thefeeds=result.feed.entries
-for (var i=0; i<thefeeds.length; i++)
-Macleans.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
-Macleans.rssoutput+="</ul>"
-Macleans.feedcontainer.innerHTML=Macleans.rssoutput
-}
-else
-alert("Error fetching feeds!")
-}
-
-function globeandmailrssfeedsetup(){
-var feedpointer=new google.feeds.Feed(Globeandmail.feedurl);
-feedpointer.setNumEntries(Globeandmail.feedlimit);
-feedpointer.load(globeandmaildisplayfeed);
-
-}
-function globeandmaildisplayfeed(result){
-if (!result.error){
-var thefeeds=result.feed.entries
-for (var i=0; i<thefeeds.length; i++)
-Globeandmail.rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
-Globeandmail.rssoutput+="</ul>"
-Globeandmail.feedcontainer.innerHTML=Globeandmail.rssoutput;
-}
-else
-alert("Error fetching feeds!")
-}
-
-    window.onload=function(){
-cbcrssfeedsetup();
-macleansrssfeedsetup();
-globeandmailrssfeedsetup();
-        
-}  
-    
-		
-      </script>
-      
-        </div>
-    </body>
 </html>

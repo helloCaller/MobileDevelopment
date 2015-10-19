@@ -1,0 +1,67 @@
+
+
+[data-role=page]{
+    height: 100% !important;
+    position:relative !important;
+}
+[data-role=footer]{
+    bottom:0;
+    position:fixed !important;
+    top: auto !important; 
+    width:100%;
+   background-color: rgba(202,47,53, 0);
+    border: none;
+    z-index: 10;
+} 
+
+/*
+[data-role=header]{
+    font-size: 4vw;
+}
+*/
+
+body{
+    overflow:hidden;
+    
+}
+
+#bufferpage01{
+    bottom:0;
+    position:fixed !important;
+    top: auto !important; 
+    height: 10%;
+    width: 100%;
+    background-color: #BE1824;
+   
+}
+#bufferpage02{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: #BE1824;
+   
+}
+
+#bufferpage03{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: #E13408;
+   
+}
+
+#bufferpage04{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: #2126C2;
+   
+}
+
+.Luke{
+    position:relative;
+    top: 53%;
+    right:-2%;
+    font-size: 0.5em; 
+    color: white;
+}
