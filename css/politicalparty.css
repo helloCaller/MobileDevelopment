@@ -8,10 +8,13 @@
     bottom:0;
     position:fixed !important;
     top: auto !important; 
+    
+    text-align: right;
     width:100%;
    background-color: rgba(202,47,53, 0);
     border: none;
     z-index: 10;
+    
 } 
 
 /*
@@ -22,6 +25,7 @@
 
 body{
     overflow:hidden;
+     
     
 }
 
@@ -65,3 +69,26 @@ body{
     font-size: 0.5em; 
     color: white;
 }
+
+#paperbox{
+    position: relative;
+    width:100%;
+    text-align: center; 
+    z-index: 10;
+    
+}
+#choosetext{
+    position: absolute;
+   top:0%;
+    left: 55%;
+    
+    font-size: 1.3em;
+    color: #B00017;
+    
+    padding: 9px;
+    border:  2px solid #9CCB7E;
+    
+   
+}
+
+    
