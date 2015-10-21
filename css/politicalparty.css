@@ -62,6 +62,14 @@ body{
    
 }
 
+#bufferpage05{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: #E13408;
+   
+}
+
 .Luke{
     position:relative;
     top: 53%;
@@ -79,16 +87,16 @@ body{
 }
 #choosetext{
     position: absolute;
-   top:0%;
-    left: 55%;
+   top:33%;
+    right: 5%;
     
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #B00017;
     
     padding: 9px;
     border:  2px solid #9CCB7E;
     
-   
+   background-color: rgba(255, 255, 255, 0.5);
 }
 
     

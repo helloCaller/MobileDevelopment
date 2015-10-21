@@ -27,18 +27,21 @@
 
 <body>
 
-    <div data-role="page" data-theme="a" id="page01">
+<div data-role="page" data-theme="a" id="page01">
         <div data-role="header" data-position="inline">
             <h1>The Connect</h1>
         </div>
 
         <div id="paperbox">
             <object type="image/svg+xml" data="img/papers.svg" alt="newspaper boxes"></object>
-            <p id="choosetext">Choose a news source below</p>
+<!--            <p id="choosetext">Choose a news source below</p>-->
         </div>
 
         <div data-role="content" data-theme="a">
             <ul data-role="listview">
+                <li data-role="list-divider">
+                <p>Choose a news source below</p>
+                </li>
 
                 <li>
                     <a href='#page02' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
@@ -64,13 +67,20 @@
                 </li>
                 
                 <br>
-
-                <li onclick="fullScreen()">Toggle fullscreen</li>
+                <li>
+                    <a href='#page05' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
+                        CTV News
+                        <img src="img/ctv.svg" alt="CTV logo" class="ui-li-icon">
+                    </a>
+                </li>
+                
+                <br>
             </ul>
         </div>
 
         <div data-role="footer" data-theme="b" class="foot">
-        <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick = "fullScreen()" data-inline="true">FULL SCREEN</button>
+        
+            <button id ="button1" class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
         </div>
         
         <div id="bufferpage01">
@@ -78,10 +88,10 @@
         </div>
 
 
-    </div>
+</div>
     <!-------------->
 
-    <div data-role="page" data-theme="a" id="page02">
+<div data-role="page" data-theme="a" id="page02">
 
         <div data-role="header" data-theme="a">
             <h1>The Connect</h1>
@@ -95,7 +105,7 @@
         <div data-role="footer" data-theme="b" class="foot">
             <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick = "location.href='#page01'" data-inline="true">HOME</button>
             
-            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULL SCREEN</button>
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
             
         </div>
 
@@ -103,12 +113,12 @@
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
-    </div>
+</div>
 
 
     <!--    -------------    -->
 
-    <div data-role="page" id="page03" data-theme="c">
+<div data-role="page" id="page03" data-theme="c">
 
         <div data-role="header" data-theme="c">
             <h1>The Connect</h1>
@@ -121,17 +131,17 @@
         <div data-role="footer" data-theme="b" class="foot">
             <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button>
             
-            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULL SCREEN</button>
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
         </div>
 
         <div id="bufferpage03">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
-    </div>
+</div>
     <!--    ----------------->
 
-    <div data-role="page" data-theme="b" id="page04">
+<div data-role="page" data-theme="b" id="page04">
 
         <div data-role="header" data-theme="b">
             <h1>The Connect</h1>
@@ -145,22 +155,44 @@
         <div data-role="footer" data-theme="b" class="foot">
             <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button>
             
-                <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULL SCREEN</button>
+                    <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
         </div>
 
         <div id="bufferpage04">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
+</div>
+
+
+
+<!--  ------------------------>
+        
+    <div data-role="page" id="page05" data-theme="c">
+
+            <div data-role="header" data-theme="c">
+                <h1>The Connect</h1>
+            </div>
+
+            <div data-role="content" data-theme="c">
+                <div id="ctvFeed"></div>
+            </div>
+
+            <div data-role="footer" data-theme="b" class="foot">
+                <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button>
+            
+                <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
+            </div>
+
+            <div id="bufferpage05">
+                <p class="Luke">&#169; 2015 Luke Garwood</p>
+            </div>
+
     </div>
 
 
 
-    <?ADD A 4TH PAGE HERE?>
-
-
-
-        <canvas id="my-canvas">
+       
             <script type="text/javascript">
                 google.load("feeds", "1")
 
@@ -177,8 +209,9 @@
 
                 var Macleans = new newssource(document.getElementById("macFeed"), "http://www.macleans.ca/politics/feed/", 10, "<h2 style='text-align: center'>&nbsp;Top Political News Stories From Maclean\'s</h2><ul data-role = 'listview'>");
 
-                var Globeandmail = new newssource(
-                    document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The Globe and Mail:</h2><ul data-role = 'listview'>");
+                var Globeandmail = new newssource(document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The Globe And Mail</h2><ul data-role = 'listview'>");
+                
+                 var CTV = new newssource(document.getElementById("ctvFeed"), "http://www.ctvnews.ca/rss/politics/ctvnews-ca-politics-public-rss-1.822302", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From CTV News </h2><ul data-role = 'listview'>");
 
 
 
@@ -188,7 +221,6 @@
                     feedpointer.load(cbcdisplayfeed)
 
                 }
-
                 function cbcdisplayfeed(result) {
                     if (!result.error) {
                         var thefeeds = result.feed.entries
@@ -208,7 +240,6 @@
                     feedpointer.load(macleansdisplayfeed);
 
                 }
-
                 function macleansdisplayfeed(result) {
                     if (!result.error) {
                         var thefeeds = result.feed.entries
@@ -229,7 +260,6 @@
                     feedpointer.load(globeandmaildisplayfeed);
 
                 }
-
                 function globeandmaildisplayfeed(result) {
                     if (!result.error) {
                         var thefeeds = result.feed.entries
@@ -241,38 +271,80 @@
                         alert("Error fetching feeds!")
                 }
 
+                
+                function ctvrssfeedsetup() {
+                    var feedpointer = new google.feeds.Feed(CTV.feedurl);
+                    feedpointer.setNumEntries(CTV.feedlimit);
+                    feedpointer.load(ctvdisplayfeed);
+
+                }
+                function ctvdisplayfeed(result) {
+                    if (!result.error) {
+                        var thefeeds = result.feed.entries
+                        for (var i = 0; i < thefeeds.length; i++)
+                            CTV.rssoutput += "<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
+                        CTV.rssoutput += "</ul>"
+                       CTV.feedcontainer.innerHTML = CTV.rssoutput;
+                    } else
+                        alert("Error fetching feeds!")
+                }
 
 
                 $(document).on('pageinit', '#page02', function () {
-                    $("#macfeed").listview('refresh');
+                   
                     cbcrssfeedsetup();
 
 
 
                 });
                 $(document).on('pageinit', '#page03', function () {
-                    $("#macfeed").listview('refresh');
+                   
                     macleansrssfeedsetup();
 
                 });
                 $(document).on('pageinit', '#page04', function () {
-                    $("#macfeed").listview('refresh');
+                    
                     globeandmailrssfeedsetup();
 
                 });
+                $(document).on('pageinit', '#page05', function () {
+                    
+                    ctvrssfeedsetup();
+                    
 
+                });
 
+               
+                
                 function fullScreen() {
+                    
                     var doc = window.document;
                     var docEl = doc.documentElement;
                     var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
                     var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+                   
                     if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
                         requestFullScreen.call(docEl);
+                        
                     } else {
                         cancelFullScreen.call(doc);
+                        
                     }
                 }
+               
+                var CheckFullScreen = true;
+                
+                  $("#button1").click(function(){
+                      var toggle = document.getElementById("button1");
+                   if(CheckFullScreen === true){
+                       toggle.innerHTML ="EXIT FULLSCREEN";
+                       CheckFullScreen = false;
+                   } else {
+                       toggle.innerHTML ="FULLSCREEN";
+                        CheckFullScreen = true;
+                   }
+               });
+              
             </script>
 
             </div>
