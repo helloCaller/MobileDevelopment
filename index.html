@@ -39,8 +39,8 @@
 
         <div data-role="content" data-theme="a">
             <ul data-role="listview">
-                <li data-role="list-divider">
-                <p>Choose a news source below</p>
+                <li data-role="list-divider" style = "background-color:#4751b8; border:none">
+                <p style="font-size: 1.1em">Choose a news source below</p>
                 </li>
 
                 <li>
@@ -49,7 +49,7 @@
                     <img src="img/cbc.svg" alt="cbc logo" class="ui-li-icon">
                     </a>
                 </li>
-                <br>
+                
                 
                 <li>
                     <a href='#page03' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
@@ -57,7 +57,7 @@
                     <img src="img/macleans.svg" alt="macleans logo" class="ui-li-icon">
                     </a>
                 </li>
-                <br>
+                
                 
                 <li>
                     <a href='#page04' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
@@ -66,15 +66,16 @@
                     </a>
                 </li>
                 
-                <br>
+                
                 <li>
                     <a href='#page05' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
                         CTV News
                         <img src="img/ctv.svg" alt="CTV logo" class="ui-li-icon">
                     </a>
+                    
                 </li>
                 
-                <br>
+                
             </ul>
         </div>
 
@@ -207,11 +208,11 @@
 
 
 
-                var Macleans = new newssource(document.getElementById("macFeed"), "http://www.macleans.ca/politics/feed/", 10, "<h2 style='text-align: center'>&nbsp;Top Political News Stories From Maclean\'s</h2><ul data-role = 'listview'>");
+                var Macleans = new newssource(document.getElementById("macFeed"), "http://www.macleans.ca/politics/feed/", 10, "<h2 style='text-align: center'>&nbsp;Top Political News Stories From Maclean\'s</h2><ul>");
 
-                var Globeandmail = new newssource(document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The Globe And Mail</h2><ul data-role = 'listview'>");
+                var Globeandmail = new newssource(document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The Globe And Mail</h2><ul>");
                 
-                 var CTV = new newssource(document.getElementById("ctvFeed"), "http://www.ctvnews.ca/rss/politics/ctvnews-ca-politics-public-rss-1.822302", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From CTV News </h2><ul data-role = 'listview'>");
+                 var CTV = new newssource(document.getElementById("ctvFeed"), "http://www.ctvnews.ca/rss/politics/ctvnews-ca-politics-public-rss-1.822302", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From CTV News </h2><ul");
 
 
 
@@ -244,7 +245,7 @@
                     if (!result.error) {
                         var thefeeds = result.feed.entries
                         for (var i = 0; i < thefeeds.length; i++)
-                            Macleans.rssoutput += "<li><a href='" + thefeeds[i].link + "' data-role =" + "'button' >" + thefeeds[i].title + "</a></li><br>"
+                            Macleans.rssoutput += "<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li><br>"
                         Macleans.rssoutput += "</ul>"
                         Macleans.feedcontainer.innerHTML = Macleans.rssoutput
                         console.log(Macleans.rssoutput);

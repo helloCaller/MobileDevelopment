@@ -1,10 +1,11 @@
 
 
-[data-role=page]{
+[data-role="page"]{
     height: 100% !important;
     position:relative !important;
+    overflow: hidden;
 }
-[data-role=footer]{
+[data-role="footer"]{
     bottom:0;
     position:fixed !important;
     top: auto !important; 
@@ -85,18 +86,10 @@ body{
     z-index: 10;
     
 }
-#choosetext{
-    position: absolute;
-   top:33%;
-    right: 5%;
+.ui-btn{
+   
+   height: 33px;
     
-    font-size: 1.1em;
-    color: #B00017;
-    
-    padding: 9px;
-    border:  2px solid #9CCB7E;
-    
-   background-color: rgba(255, 255, 255, 0.5);
 }
 
     
