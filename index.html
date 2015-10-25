@@ -40,7 +40,7 @@
         <div data-role="content" data-theme="a">
             <ul data-role="listview">
                 <li data-role="list-divider" style = "background-color:#4751b8; border:none">
-                <p style="font-size: 1.1em">Choose a news source below</p>
+                <p style="font-size: 1.2em">Choose a news source below</p>
                 </li>
 
                 <li>
@@ -76,6 +76,23 @@
                 </li>
                 
                 
+            </ul>
+            <ul>
+                <li>
+                    <a href='#page06' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
+                        Party Compass
+                        
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href='#page07' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
+                       The Election According To TomoNews (the Taiwanese Animators)
+                        
+                    </a>
+                    
+                </li>
+            
             </ul>
         </div>
 
@@ -191,6 +208,66 @@
 
     </div>
 
+<!-------------->
+    <div data-role="page" id="page06" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>The Connect</h1>
+        </div>
+
+        <div data-role="content" data-theme="c" class="feedclass">
+            
+            <p style="font-size: 1.2em">Fill out the form below to find out which party your views align with</p>
+            <form>
+               <fieldset data-role="controlgroup">
+	<legend>When it comes to drugs, you feel that..</legend>
+     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+     	<label for="radio-choice-1">Marijuana should not be legalized, but should continue to be used for medicinal purposes.</label>
+
+     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+     	<label for="radio-choice-2"> Canada should seriously consider legalizing marijuana.</label>
+
+     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+     	<label for="radio-choice-3"> Canada should legalize marijuana right away.</label>
+
+     	
+</fieldset>
+
+            </form>
+        </div>
+
+        <div data-role="footer" data-theme="b" class="foot">
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button>
+            
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
+        </div>
+
+        <div id="bufferpage03">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+</div>
+<!--        --------------->
+        <div data-role="page" id="page07" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>The Connect</h1>
+        </div>
+
+        <div data-role="content" data-theme="c" class="feedclass">
+            <iframe src="https://www.youtube.com/embed/Ecda9RKe3Gc?rel=0&amp;showinfo=0;autoplay=1" frameborder="0" width="100%" allowfullscreen></iframe>
+        </div>
+
+        <div data-role="footer" data-theme="b" class="foot">
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                  onclick = "location.href='#page01'">HOME</button>
+            
+            <button class = "ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"   onclick = "fullScreen()" data-inline="true">FULLSCREEN</button>
+        </div>
+
+        <div id="bufferpage03">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+
+    </div>
 
 
        
@@ -314,6 +391,7 @@
                     
 
                 });
+                
 
                
                 
@@ -345,7 +423,9 @@
                         CheckFullScreen = true;
                    }
                });
-              
+            
+                $("iframe").css('height', $(window).height() + 'px');
+          
             </script>
 
             
