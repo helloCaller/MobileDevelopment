@@ -217,20 +217,24 @@
 
         <div data-role="content" data-theme="c" class="feedclass">
             
-            <p style="font-size: 1.2em">Fill out the form below to find out which party your views align with</p>
+            <p style="font-size: 1.3em; text-align: center;">Fill out the form below to find out which party your views align with</p>
             <form>
                <fieldset data-role="controlgroup">
 	<legend>When it comes to drugs, you feel that..</legend>
-     	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
-     	<label for="radio-choice-1">Marijuana should not be legalized, but should continue to be used for medicinal purposes.</label>
+     	<input type="radio" name="marijuana-choice" id="marijuana-choice-1" value="choice-1" />
+     	<label for="marijuana-choice-1">Marijuana should not be legalized, but should continue to be used for medicinal purposes.</label>
 
-     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
-     	<label for="radio-choice-2"> Canada should seriously consider legalizing marijuana.</label>
+     	<input type="radio" name="marijuana-choice" id="marijuana-choice-2" value="choice-2"  />
+     	<label for="marijuana-choice-2"> Canada should seriously consider legalizing marijuana.</label>
 
-     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
-     	<label for="radio-choice-3"> Canada should legalize marijuana right away.</label>
+     	<input type="radio" name="marijuana-choice" id="marijuana-choice-3" value="choice-3"  />
+     	<label for="marijuana-choice-3"> Canada should legalize marijuana right away.</label>
 
-     	
+        <div data-role="fieldcontain">
+        <label for="enviro-range" style="width:100%">On a scale of 1-10, how much of an impact should the environment have on policy?<span style="color:black; text-align: center"> 1 being not at all, and 10 meaning completely</span></label>        <input type="range" name="enviro-range" id="enviro-range" value="5" min="0" max="10" data-highlight="true"/>
+             </div>   
+                   
+            
 </fieldset>
 
             </form>
@@ -254,7 +258,7 @@
         </div>
 
         <div data-role="content" data-theme="c" class="feedclass">
-            <iframe src="https://www.youtube.com/embed/Ecda9RKe3Gc?rel=0&amp;showinfo=0;autoplay=1" frameborder="0" width="100%" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Ecda9RKe3Gc?rel=0&amp;showinfo=0;" frameborder="0" width="100%" allowfullscreen></iframe>
         </div>
 
         <div data-role="footer" data-theme="b" class="foot">
@@ -423,7 +427,9 @@
                         CheckFullScreen = true;
                    }
                });
-            
+                
+                
+//            RESIZE VIDEO WINDOW TO FIT SCREEN
                 $("iframe").css('height', $(window).height() + 'px');
           
             </script>
