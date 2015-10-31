@@ -16,299 +16,337 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 
-    <?RUN iOS HOME SCREEN PAGES IN FULL SCREEN?>
+<!--    SET UP ICON FOR VARIOUS SIZES-->
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <?SET APPLE HOME SCREEN ICON?>
-            <link rel="apple-touch-icon" href="images/bardoicon.png">
-            <link rel="apple-touch-icon-precomposed" href="images/bardoicon.png">
-            <?SET ANDROID HOME SCREEN ICON?>
-                <link rel="shortcut icon" sizes="57x57" href="images/bardoicon.png">
+        
+            <link rel="apple-touch-icon" href="img/theconnecticon.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="img/theconnecticon.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="img/theconnecticon.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="img/theconnecticon.png">
+            <link rel="apple-touch-icon-precomposed" href="img/theconnecticon.png">
+<!--            ANDROID-->
+                <link rel="shortcut icon" sizes="57x57" href="img/theconnecticon.png">
 </head>
 
 <body>
-
+    
     <div data-role="page" data-theme="a" id="page01">
-        <div data-role="header" data-position="inline">
+
+    <div data-role="header" data-theme="a">
             <h1>The Connect</h1>
-        </div>
+    </div>
 
         <div id="paperbox">
             <object type="image/svg+xml" data="img/papers.svg" alt="newspaper boxes"></object>
-            <!--            <p id="choosetext">Choose a news source below</p>-->
         </div>
-
-        <div data-role="content" data-theme="a">
-            <ul data-role="listview">
-                <li data-role="list-divider" style="background-color:#4751b8; border:none">
-                    <p style="font-size: 1.2em">Choose a news source below</p>
-                </li>
-
-                <li>
-                    <a href='#page02' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                    CBC
-                    <img src="img/cbc.svg" alt="cbc logo" class="ui-li-icon">
+        
+    <div data-role="content" data-theme="a" class="feedclass">
+          <ul data-role="listview">
+              <li data-role="list-divider">
+                  <p style="font-size: 1.2em">Welcome to <i>The Connect</i>.<br><span style="font-size=1em"> Choose an option below.</span></p>
+              </li>
+              
+              <li>
+                    <a href='#page02' class="ui-btn ui-icon-arrow-r ui-btn-icon-right"                                  data-transition="slideup">
+                        The latest political articles from<br> the CBC, Maclean's, The Globe and Mail, and CTV News
+                  </a>
+              </li>
+              <li>
+                    <a href='#page07' class="ui-btn ui-icon-bullets ui-btn-icon-right"                                  data-transition="slideup">
+                        Party Compass<br> Find out which party your views align with
                     </a>
                 </li>
-
-
                 <li>
-                    <a href='#page03' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                    Maclean's
-                    <img src="img/macleans.svg" alt="macleans logo" class="ui-li-icon">
+                    <a href='#page08' class="ui-btn ui-icon-video ui-btn-icon-right"                                  data-transition="slideup">
+                       The Election According To TomoNews<br> (the Taiwanese Animators)
                     </a>
                 </li>
-
-
                 <li>
-                    <a href='#page04' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                        Globe and Mail
-                        <img src="img/globeandmail.svg" alt="globe logo" class="ui-li-icon">
+                    <a href='#page09' class="ui-btn ui-icon-arrow-r ui-btn-icon-right"                                  data-transition="slideup">
+                       About page
                     </a>
                 </li>
+          </ul>  
+    </div>
 
+    <div data-role="footer" data-theme="b" class="foot">
 
-                <li>
-                    <a href='#page05' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                        CTV News
-                        <img src="img/ctv.svg" alt="CTV logo" class="ui-li-icon">
-                    </a>
-
-                </li>
-
-
-            </ul>
-            <ul>
-                <li>
-                    <a href='#page06' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                        Party Compass
-                        
-                    </a>
-
-                </li>
-                <li>
-                    <a href='#page07' class="ui-btn ui-icon-arrow-r ui-btn-icon-right" data-transition="slideup">
-                       The Election According To TomoNews (the Taiwanese Animators)
-                        
-                    </a>
-
-                </li>
-
-            </ul>
-        </div>
-
-        <div data-role="footer" data-theme="b" class="foot">
-
-            <button id="button1" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
+            <button id="button1" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left                         ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
 
         <div id="bufferpage01">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
-
-    </div>
-    <!-------------->
-
-    <div data-role="page" data-theme="a" id="page02">
-
-        <div data-role="header" data-theme="a">
+</div>
+<!---------end of page------------->
+    
+<div data-role="page" data-theme="a" id="page02">
+        
+    <div data-role="header" data-position="inline">
             <h1>The Connect</h1>
-        </div>
-
-
-        <div data-role="content" data-theme="a" class="feedclass">
-            <div id="cbcFeed"></div>
-        </div>
-
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'" data-inline="true">HOME</button>
-
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-
-        </div>
-
-        <div id="bufferpage02">
-            <p class="Luke">&#169; 2015 Luke Garwood</p>
-        </div>
-
     </div>
 
-
-    <!--    -------------    -->
-
-    <div data-role="page" id="page03" data-theme="c">
-
-        <div data-role="header" data-theme="c">
-            <h1>The Connect</h1>
+        <div id="paperbox">
+            <object type="image/svg+xml" data="img/papers.svg" alt="newspaper boxes"></object>
         </div>
 
-        <div data-role="content" data-theme="c" class="feedclass">
-            <div id="macFeed"></div>
-        </div>
-
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'">HOME</button>
-
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
-
-        <div id="bufferpage03">
-            <p class="Luke">&#169; 2015 Luke Garwood</p>
-        </div>
-
-    </div>
-    <!--    ----------------->
-
-    <div data-role="page" data-theme="b" id="page04">
-
-        <div data-role="header" data-theme="b">
-            <h1>The Connect</h1>
-        </div>
-
-        <div data-role="content" data-theme="b" class="feedclass">
-
-            <div id="globeandmailFeed"></div>
-        </div>
-
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'">HOME</button>
-
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
-
-        <div id="bufferpage04">
-            <p class="Luke">&#169; 2015 Luke Garwood</p>
-        </div>
-
+    <div data-role="content" data-theme="a">
+            
+            <ul data-role="listview">
+                <li data-role="list-divider" style="background-color:#4751b8; border:none">
+                    <p style="font-size: 1.2em">Choose a news source below</p>
+                </li>
+                <li>
+                    <a href='#page03' class="ui-btn ui-icon-carat-r ui-btn-icon-right"                                  data-transition="slideup">
+                        CBC
+                        <img src="img/cbc.svg" alt="cbc logo" class="ui-li-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href='#page04' class="ui-btn ui-icon-carat-r ui-btn-icon-right"                                  data-transition="slideup">
+                        Maclean's
+                        <img src="img/macleans.svg" alt="macleans logo" class="ui-li-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href='#page05' class="ui-btn ui-icon-carat-r ui-btn-icon-right"                                  data-transition="slideup">
+                        Globe and Mail
+                        <img src="img/globeandmail.svg" alt="globe logo" class="ui-li-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href='#page06' class="ui-btn ui-icon-carat-r ui-btn-icon-right"                                  data-transition="slideup">
+                        CTV News
+                        <img src="img/ctv.svg" alt="CTV logo" class="ui-li-icon">
+                    </a>
+                </li>
+            </ul>
+            
+            
+            
+            
     </div>
 
+    <div data-role="footer" data-theme="b" class="foot">
+            
 
-
-    <!--  ------------------------>
-
-    <div data-role="page" id="page05" data-theme="c">
-
-        <div data-role="header" data-theme="c">
-            <h1>The Connect</h1>
-        </div>
-
-        <div data-role="content" data-theme="c" class="feedclass">
-            <div id="ctvFeed"></div>
-        </div>
-
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'">HOME</button>
-
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
+             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
 
         <div id="bufferpage05">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
+
+</div>
+    <!---------end of page ----->
+
+<div data-role="page" data-theme="a" id="page03">
+
+    <div data-role="header" data-theme="a">
+            <h1>The Connect - CBC</h1>
     </div>
 
-    <!-------------->
-    <div data-role="page" id="page06" data-theme="c">
 
-        <div data-role="header" data-theme="c">
-            <h1>The Connect</h1>
+    <div data-role="content" data-theme="a" class="feedclass">
+            <div id="cbcFeed"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                        onclick="location.href='#page01'" data-inline="true">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
+
+        <div id="bufferpage02">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
-        <div data-role="content" data-theme="c" class="feedclass">
+</div>
 
-            <h3>Complete the form below and find out which Canadian political party your views align with.</h3>
-            <form>
-                <div data-role="fieldcontain">
-                    <legend>How should the arts be supported in Canada?</legend>
+
+    <!--    ----end of page ---------    -->
+
+<div data-role="page" id="page04" data-theme="c">
+
+    <div data-role="header" data-theme="c">
+            <h1>The Connect - Maclean's</h1>
+    </div>
+
+    <div data-role="content" data-theme="c" class="feedclass">
+            <div id="macFeed"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                         onclick="location.href='#page01'">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
+
+        <div id="bufferpage03">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+
+</div>
+    <!--    --------end of page --------->
+
+<div data-role="page" data-theme="b" id="page05">
+
+    <div data-role="header" data-theme="b">
+            <h1>The Connect - Globe and Mail</h1>
+    </div>
+
+    <div data-role="content" data-theme="b" class="feedclass">
+
+            <div id="globeandmailFeed"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                         onclick="location.href='#page01'">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
+
+            <div id="bufferpage04">
+                <p class="Luke">&#169; 2015 Luke Garwood</p>
+            </div>
+
+</div>
+    <!--  ----------end of page-------------->
+
+<div data-role="page" id="page06" data-theme="c">
+
+    <div data-role="header" data-theme="c">
+            <h1>The Connect - CTV</h1>
+    </div>
+
+    <div data-role="content" data-theme="c" class="feedclass">
+            <div id="ctvFeed"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                         onclick="location.href='#page01'">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
+
+        <div id="bufferpage05">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+
+</div>
+    <!-------end of page------->
+    
+<div data-role="page" id="page07" data-theme="c">
+
+    <div data-role="header" data-theme="c">
+            <h1>The Connect - Form</h1>
+    </div>
+
+    <div data-role="content" data-theme="c" class="feedclass">
+
+        <h3>Complete the form below and find out which Canadian political party your views align with.</h3>
+            
+        <form>
+        <fieldset data-role="controlgroup">
+            <div data-role="fieldcontain">
+                <legend>How should the arts be supported in Canada?</legend>
                     <input type="radio" name="arts-choice" id="arts-choice-1" value="Liberal" />
-                    <label for="arts-choice-1">Doubling the funding for the Canada Council of the Arts</label>
+                    <label for="arts-choice-1">Double the funding for the Canada Council of the Arts.</label>
 
                     <input type="radio" name="arts-choice" id="arts-choice-2" value="NDP" />
-                    <label for="arts-choice-2">Supporting individual artists through tax breaks.</label>
+                    <label for="arts-choice-2">Support individual artists through tax breaks.</label>
+                    
                     <input type="radio" name="arts-choice" id="arts-choice-3" value="Conservative" />
-                    <label for="arts-choice-3">Continue supporting the arts, and stop the introduction of taxes on streaming services like Netflix.</label>
+                    <label for="arts-choice-3">Maintain the arts by making strategic cuts to entities such as the CBC. </label>
 
                     <input type="radio" name="arts-choice" id="arts-choice-4" value="Green" />
-                    <label for="arts-choice-4">Champion Canadian content by revisiting content regulations</label>
-                </div>
+                    <label for="arts-choice-4">Champion Canadian content by revisiting content regulations.</label>
+            </div>
 
-                <div data-role="fieldcontain">
-                    <label for="enviro-range" style="width:100%">On a scale of 0 - 10, how much of an impact should the environment have on policy?<span style="color:black"> 0 being not at all, and 10 meaning completely</span></label>
-                    <input type="range" name="enviro-range" id="enviro-range" value="5" min="0" max="10" data-highlight="true" />
-                </div>
+            <div data-role="fieldcontain">
+                    <label for="enviro-range" style="width:100%">On a scale of 0 - 10, how much should the environment affect domestic policies? 0 being not at all, and 10 being always </label>
+                    <input type="range" name="enviro-range" id="enviro-range" value="5" min="0" max="10"                                     data-highlight="true" />
+            </div>
 
-                <fieldset data-role="controlgroup">
+            <div data-role="fieldcontain">
                     <legend>When it comes to drugs, you feel that..</legend>
+                    
                     <input type="radio" name="marijuana-choice" id="marijuana-choice-1" value="Conservative" />
                     <label for="marijuana-choice-1">Marijuana should not be legalized, but should continue to be used for medicinal purposes.</label>
 
                     <input type="radio" name="marijuana-choice" id="marijuana-choice-2" value="Green" />
                     <label for="marijuana-choice-2"> Canada should seriously consider legalizing marijuana.</label>
 
-                    <input type="radio" name="marijuana-choice" id="marijuana-choice-3" value="Liberal, NDP"  />
+                    <input type="radio" name="marijuana-choice" id="marijuana-choice-3" value="Liberal, NDP" />
                     <label for="marijuana-choice-3"> Canada should legalize marijuana right away.</label>
 
-
-                    <div data-role="fieldcontain">
+            </div>
+            
+            <div data-role="fieldcontain">
                         <legend>The Canadian economy needs...</legend>
-                        <input type="radio" name="economy-choice" id="economy-choice-1" value="NDP" />
-                        <label for="economy-choice-1">A 17% corporate tax rate for funds to put towards childcare, healthcare, and infrastructure.</label>
-                        <input type="radio" name="economy-choice" id="economy-choice-2" value="Liberal" />
-                        <label for="economy-choice-2">Investment in job creation and infrastructure, by running a 3 year deficit.</label>
-                        <input type="radio" name="economy-choice" id="economy-choice-3" value="Conservative" />
-                        <label for="economy-choice-3"> To keep taxes low, keep income splitting for families with childern under 18, and increase contribution limits to Tax-Free savings accounts.</label>
+                        
+                    <input type="radio" name="economy-choice" id="economy-choice-1" value="NDP" />
+                    <label for="economy-choice-1">A 17% corporate tax rate for funds to put towards childcare, healthcare, and infrastructure.</label>
+                        
+                    <input type="radio" name="economy-choice" id="economy-choice-2" value="Liberal" />
+                    <label for="economy-choice-2">Investment in job creation and infrastructure, by running a 3 year deficit.</label>
+                    <input type="radio" name="economy-choice" id="economy-choice-3" value="Conservative" />
+                    <label for="economy-choice-3"> To keep taxes low, keep income splitting for families with childern under 18, and increase contribution limits to Tax-Free savings accounts.</label>
 
-                    </div>
+            </div>
 
-                    <div data-role="fieldcontain">
-                        <label for="hair-range" style="width:100%">On a scale of 0 - 10, how important is your Prime Minister's hair?<span style="color:black"> 0 being not at all, and 10 meaning completely</span></label>
-                        <input type="range" name="hair-range" id="hair-range" value="5" min="0" max="10" data-highlight="true" />
-                    </div>
+            <div data-role="fieldcontain">
+                    <label for="hair-range" style="width:100%">On a scale of 0 - 10, how important is your Prime Minister's hair? 0 being not so much, and 10 meaning a helluva a lot</label>
+                    <input type="range" name="hair-range" id="hair-range" value="5" min="0" max="10" data-highlight="true" />
+            </div>
 
-</fieldset>
+                </fieldset>
 
             </form>
-            
-            <p style="font-size:1.2em" id = "showpartyresults"></p>
-            
+
+                <p style="font-size:1.2em" id="showpartyresults"></p>
+
             <div id="results">
                 <input type="button" value="Submit" onclick="formresults()"></input>
             </div>
-        </div>
+    
+    </div>
 
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'">HOME</button>
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                                             onclick="location.href='#page01'">HOME</button>
 
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()"                   data-inline="true">FULLSCREEN</button>
+    </div>
 
         <div id="bufferpage03">
             <p class="Luke">*This form is not quite scientific.&#169; 2015 Luke Garwood</p>
         </div>
+</div>
+    <!--        --------end of form page------->
+    
+<div data-role="page" id="page08" data-theme="c">
+
+    <div data-role="header" data-theme="c">
+            <h1>The Connect - Video</h1>
     </div>
-    <!--        --------------->
-    <div data-role="page" id="page07" data-theme="c">
 
-        <div data-role="header" data-theme="c">
-            <h1>The Connect</h1>
-        </div>
-
-        <div data-role="content" data-theme="c" class="feedclass">
+    <div data-role="content" data-theme="c" class="feedclass">
             <iframe src="https://www.youtube.com/embed/Ecda9RKe3Gc?rel=0&amp;showinfo=0;" frameborder="0" width="100%" allowfullscreen></iframe>
-        </div>
+    </div>
 
-        <div data-role="footer" data-theme="b" class="foot">
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home" onclick="location.href='#page01'">HOME</button>
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                                             onclick="location.href='#page01'">HOME</button>
 
-            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
-        </div>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()"                    data-inline="true">FULLSCREEN</button>
+    </div>
 
         <div id="bufferpage03">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
-    </div>
+</div>
 
 
 
@@ -417,17 +455,17 @@
 
             cbcrssfeedsetup();
         });
-        
+
         $(document).on('pageinit', '#page03', function () {
 
             macleansrssfeedsetup();
         });
-        
+
         $(document).on('pageinit', '#page04', function () {
 
             globeandmailrssfeedsetup();
         });
-        
+
         $(document).on('pageinit', '#page05', function () {
 
             ctvrssfeedsetup();
@@ -474,34 +512,34 @@
 
 
         function formresults() {
-               var enivroparty;
-                var hairparty;
-                var enviroslidervalue=document.getElementById("enviro-range").value;
-                var hairslidervalue = document.getElementById("hair-range").value;
-            
-            
-        //READ SLIDER VALUES AND CONVERT TO PARTY NAMES    
-        if(enviroslidervalue <= 2){
-                enviroparty = "Green";
-            } else if(enviroslidervalue > 2 && enviroslidervalue <= 5 ){
+            var enivroparty;
+            var hairparty;
+            var enviroslidervalue = document.getElementById("enviro-range").value;
+            var hairslidervalue = document.getElementById("hair-range").value;
+
+
+            //READ SLIDER VALUES AND CONVERT TO PARTY NAMES    
+            if (enviroslidervalue <= 2) {
+                enviroparty = "Conservative";
+            } else if (enviroslidervalue > 2 && enviroslidervalue <= 5) {
+                enviroparty = "Liberal";
+            } else if (enviroslidervalue > 5 && enviroslidervalue <= 7) {
                 enviroparty = "NDP";
-            } else if(enviroslidervalue > 5 && enviroslidervalue <= 7){
-                 enviroparty = "Liberal";
-            } else{
-             enviroparty = "Conservative";
-        };
-            
-        if(hairslidervalue <= 2){
+            } else {
+                enviroparty = "Green";
+            };
+
+            if (hairslidervalue <= 2) {
                 hairparty = "Conservative";
-            }else if(hairslidervalue > 2 && hairslidervalue <= 5 ){
+            } else if (hairslidervalue > 2 && hairslidervalue <= 5) {
                 hairparty = "NDP";
-            } else if(hairslidervalue > 5 && hairslidervalue <= 7){
-                 hairparty = "Green";
-            } else{
-             hairparty = "Liberal";
-        };
-            
-            
+            } else if (hairslidervalue > 5 && hairslidervalue <= 7) {
+                hairparty = "Green";
+            } else {
+                hairparty = "Liberal";
+            };
+
+
             //OBJECT CONTAINING ASSOCIATED Q & A
             var formanswers = {
                 arts: $("input[name=arts-choice]:checked", 'form').val(),
@@ -511,43 +549,48 @@
                 hair: hairparty
 
             }
-           
+
             //SETTING UP AN ARRY TO HOLD THE ANSWERS
             var choices = [formanswers.arts, formanswers.environment, formanswers.drugs, formanswers.economy, formanswers.hair];
-            
+
             var Liberal = 0
             var NDP = 0
             var Conservative = 0
             var Green = 0
-            
+
             //SCAN THROUGH ARRAY AND SET UP RESULTS
-            for(i=0; i<choices.length; i++){
-                switch(choices[i]){
-                    case "Liberal": Liberal += 1;
+            for (i = 0; i < choices.length; i++) {
+                switch (choices[i]) {
+                case "Liberal":
+                    Liberal += 1;
                     break;
-                    case "NDP": NDP += 1;
+                case "NDP":
+                    NDP += 1;
                     break;
-                    case "Conservative": Conservative += 1;
+                case "Conservative":
+                    Conservative += 1;
                     break;
-                    case "Green": Green += 1;
+                case "Green":
+                    Green += 1;
                     break;
-                    default: "none";
+                default:
+                    "none";
                 }
             }
-        
+
             //UPDATES UI TO SHOW RESULTS
-            if(Liberal>NDP && Liberal>Conservative && Liberal>Green){
-                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#BE1824'> Liberal</span>!");
-            } else if(Conservative>Liberal && Conservative>NDP && Conservative>Green){
-                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#2126C2'>Conservative</span> !");  
-            } else if(NDP>Liberal && NDP> Conservative && NDP>Green){
-                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#E13408'>NDP</span> !"); 
-            } else if (Green>Conservative && Green>Liberal && Green>Conservative){
-                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#2F8E22'>Green</span> !"); 
+            if (Liberal > NDP && Liberal > Conservative && Liberal > Green) {
+                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#BE1824'> Liberal!</span>");
+            } else if (Conservative > Liberal && Conservative > NDP && Conservative > Green) {
+                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#2126C2'>Conservative!</span>");
+            } else if (NDP > Liberal && NDP > Conservative && NDP > Green) {
+                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#E13408'>NDP!</span>");
+            } else if (Green > Conservative && Green > Liberal && Green > Conservative) {
+                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:#2F8E22'>Green!</span>");
             } else {
-                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:black'>inconclusive</span>!....try again!"); 
+                $("#showpartyresults").html("and the result is...<span style='font-size: 1.2em; color:black'>inconclusive!</span>....try again!");
             };
-            
+
             $("#results").hide();
 
         };
