@@ -34,6 +34,7 @@
 
     <div data-role="header" data-theme="a">
             <h1>The Connect</h1>
+             <p style="font-size:90%; text-align: center"> "Your Canadian Political News Source"</p>
     </div>
 
         <div id="paperbox">
@@ -41,29 +42,36 @@
         </div>
         
     <div data-role="content" data-theme="a" class="feedclass">
+       
           <ul data-role="listview">
-              <li data-role="list-divider">
-                  <p style="font-size: 1.2em">Welcome to <i>The Connect</i>.<br><span style="font-size=1em"> Choose an option below.</span></p>
+              <li data-role="list-divider" style="background-color:#4751b8; border: none; font-size:120%; white-space: normal">
+                 
+                   
+                  Navigate through the options below
               </li>
               
               <li>
-                    <a href='#page02' class="ui-btn ui-icon-arrow-r ui-btn-icon-right"                                  data-transition="slideup">
-                        The latest political articles from<br> the CBC, Maclean's, The Globe and Mail, and CTV News
+                    <a href='#page02' class="ui-btn ui-icon-arrow-r ui-btn-icon-left"                                  data-transition="pop">
+                       Political News
+                    <p> Latest RSS feeds from CBC, Maclean's, Globe and Mail, and CTV News</p>
                   </a>
               </li>
               <li>
-                    <a href='#page07' class="ui-btn ui-icon-bullets ui-btn-icon-right"                                  data-transition="slideup">
-                        Party Compass<br> Find out which party your views align with
+                    <a href='#page07' class="ui-btn ui-icon-bullets ui-btn-icon-left"                                  data-transition="pop">
+                        Party Compass
+                        <p> Find out which political party your views align with</p>
                     </a>
                 </li>
                 <li>
-                    <a href='#page08' class="ui-btn ui-icon-video ui-btn-icon-right"                                  data-transition="slideup">
-                       The Election According To TomoNews<br> (the Taiwanese Animators)
+                    <a href='#page08' class="ui-btn ui-icon-video ui-btn-icon-left"                                  data-transition="pop">
+                       The Election According To TomoNews
+                        <p> A video from the Taiwanese Animators</p>
                     </a>
                 </li>
                 <li>
-                    <a href='#page09' class="ui-btn ui-icon-arrow-r ui-btn-icon-right"                                  data-transition="slideup">
-                       About page
+                    <a href='#page09' class="ui-btn ui-icon-arrow-r ui-btn-icon-left"                                  data-transition="pop">
+                       About Page
+                        <p>Learn more about this web app</p>
                     </a>
                 </li>
           </ul>  
@@ -74,7 +82,7 @@
             <button id="button1" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left                         ui-icon-action" onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage01">
+        <div class="bufferpage" style = "background-color: #BE1824">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -84,18 +92,18 @@
 <div data-role="page" data-theme="a" id="page02">
         
     <div data-role="header" data-position="inline">
-            <h1>The Connect</h1>
+            <h1>The Connect - RSS Feeds</h1>
     </div>
 
         <div id="paperbox">
-            <object type="image/svg+xml" data="img/papers.svg" alt="newspaper boxes"></object>
+            <object type="image/svg+xml" data="img/papersopen.svg" alt="newspaper boxes"></object>
         </div>
 
     <div data-role="content" data-theme="a">
             
             <ul data-role="listview">
-                <li data-role="list-divider" style="background-color:#4751b8; border:none">
-                    <p style="font-size: 1.2em">Choose a news source below</p>
+                <li data-role="list-divider" style="background-color:#4751b8; border:none;font-size: 110%">
+                    Choose a news source below
                 </li>
                 <li>
                     <a href='#page03' class="ui-btn ui-icon-carat-r ui-btn-icon-right"                                  data-transition="slideup">
@@ -121,20 +129,45 @@
                         <img src="img/ctv.svg" alt="CTV logo" class="ui-li-icon">
                     </a>
                 </li>
-            </ul>
             
             
             
+                <li data-role="list-divider" style=" color: white; background-color:#4751b8; border:none;font-size: 110%">
+                   Or do a keyword search through a choice of news sites:
+                </li>
+    <br>
+    <label for="select-choice" class="select"> &nbsp; Pick a news site:</label>
+<select name="select-choice" id="select-choice">
+   <option value="CNN.com">CNN</option>
+   <option value="bbccanada.com">BBC Canada</option>
+   <option value="torontosun.com">Toronto Sun</option>
+   <option value="cbc.ca">CBC</option>
+    <option value="nationalpost.com">National Post</option>
+    <option value="macleans.ca">Maclean's</option>
+    <option value="thestar.com">Toronto Star</option>
+    <option value="globalnews.ca">Global</option>
+     <option value="ledevoir.com">Le Devoir</option>
+     <option value="globeandmail.ca">The Globe and Mail</option>
+    <option value="ctvnews.ca">CTV News</option>
+</select>
+                <br>
+    <label for="searchinput">&nbsp; Input Keyword:</label>
+    <input type="search" name="searchinput" id="searchinput" placeholder="example: Trudeau" value=""  />
+    <input type="submit" value="Submit Search" id = "searchsubmit"  onclick="location.href='#page10'" data-theme="e">
             
-    </div>
-
+            
+    
+        </ul>
+    </div>  
+    
     <div data-role="footer" data-theme="b" class="foot">
+             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                         onclick="location.href='#page01'">HOME</button>
             
 
              <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage05">
+        <div class="bufferpage" style="background-color:#E13408">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -151,7 +184,9 @@
 
     <div data-role="content" data-theme="a" class="feedclass">
             <div id="cbcFeed"></div>
-    </div>
+            
+</div>
+    
 
     <div data-role="footer" data-theme="b" class="foot">
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                        onclick="location.href='#page01'" data-inline="true">HOME</button>
@@ -159,7 +194,7 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage02">
+        <div class="bufferpage" style="background-color: #BE1824">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -184,7 +219,7 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage03">
+        <div class="bufferpage" style="background-color: #E13408">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -208,7 +243,7 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-            <div id="bufferpage04">
+            <div class="bufferpage" style="background-color: #2126C2">
                 <p class="Luke">&#169; 2015 Luke Garwood</p>
             </div>
 
@@ -231,7 +266,7 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage05">
+       <div class="bufferpage" style="background-color: #E13408">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -320,8 +355,8 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()"                   data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage03">
-            <p class="Luke">*This form is not quite scientific.&#169; 2015 Luke Garwood</p>
+       <div class="bufferpage" style="background-color: #E13408">
+            <p class="Luke">*This form is not quite scientific. &#169; 2015 Luke Garwood</p>
         </div>
 </div>
     <!--        --------end of form page------->
@@ -342,7 +377,57 @@
             <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()"                    data-inline="true">FULLSCREEN</button>
     </div>
 
-        <div id="bufferpage03">
+        <div class="bufferpage" style="background-color: #E13408">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+
+</div>
+<!--    ----------------end of page-------------->
+    
+    <div data-role="page" data-theme="a" id="page09">
+
+    
+           
+  
+
+
+    <div data-role="content" data-theme="a" class="feedclass">
+            <h1>The Connect - About This Web App</h1>
+        <p>Following the recent federal election, I was inspired to make a politically centered web app. Not knowing much about RSS feeds at the onset, I also sought to research more about them, and how best to use them to create a one-stop hub for news content.<i>The Connect</i> turned into a centralized aggregator for Canadian political news. Using Google's Feed API, <i> The Connect</i> taps into the latest from national news articles from the CBC, Maclean's, The Globe and Mail, and CTV news. Though the RSS feeds worked out well for my initial needs, they are limited    </p>
+        
+        
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                        onclick="location.href='#page01'" data-inline="true">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"                       onclick="fullScreen()" data-inline="true">FULLSCREEN</button>
+    </div>
+
+        <div class="bufferpage" style="background-color: #BE1824">
+            <p class="Luke">&#169; 2015 Luke Garwood</p>
+        </div>
+
+</div>
+<!--    -----------------end of page-------------->
+    
+    <div data-role="page" id="page10" data-theme="c">
+
+    <div data-role="header" data-theme="c">
+            <h1>The Connect - Search</h1>
+    </div>
+
+    <div data-role="content" data-theme="c" class="feedclass">
+            <div id = "searchresults"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" class="foot">
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home"                                             onclick="location.href='#page01'">HOME</button>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action" onclick="fullScreen()"                    data-inline="true">FULLSCREEN</button>
+    </div>
+
+        <div class="bufferpage" style="background-color: #E13408">
             <p class="Luke">&#169; 2015 Luke Garwood</p>
         </div>
 
@@ -350,9 +435,61 @@
 
 
 
-    <script type="text/javascript">
-        google.load("feeds", "1")
 
+    <script type="text/javascript">
+        
+        
+        
+       
+       
+        google.load("feeds", "1")
+        
+   function searching(){  
+            function OnLoad() {
+        var newschoice = $("#select-choice").val();
+          var searchinput = $("#searchinput").val();
+  console.log(searchinput);
+  var query = "'site:" + newschoice + " " + searchinput + "'";
+  google.feeds.findFeeds(query, findDone);
+            console.log(query);
+}
+             
+
+function findDone(result) {
+  // Make sure we didn't get an error.
+  if (!result.error) {
+    // Get content div
+    var content = document.getElementById('searchresults');
+    var html = '<p> Your search returned these articles:</p>';
+
+    // Loop through the results and print out the title of the feed and link to
+    // the url.
+    for (var i = 0; i < 10; i++) {
+      var entry = result.entries[i];
+      html += '<p><a href="/feed/v1/' + entry.url + '">' + entry.title + '</a></p>';
+    }
+    content.innerHTML = html;
+  } else{
+      console.log('error');
+}
+}
+        
+       google.setOnLoadCallback(OnLoad());
+        
+};
+        
+       $('#searchsubmit').click(function(){
+           var searchinput = $("#searchinput").val();
+         
+           console.log(searchinput);
+           searching();
+          
+       });
+        
+
+
+                   
+            //SETTING UP NEWSOURCE OBJECT
         function newssource(feedcontainer, feedurl, feedlimit, rssoutput) {
             this.feedcontainer = feedcontainer;
             this.feedurl = feedurl;
@@ -362,16 +499,16 @@
 
         var CBC = new newssource(document.getElementById("cbcFeed"), "http://rss.cbc.ca/lineup/politics.xml", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The CBC</h2><ul>");
 
-
-
         var Macleans = new newssource(document.getElementById("macFeed"), "http://www.macleans.ca/politics/feed/", 10, "<h2 style='text-align: center'>&nbsp;Top Political News Stories From Maclean\'s</h2><ul>");
 
         var Globeandmail = new newssource(document.getElementById("globeandmailFeed"), "http://www.theglobeandmail.com/news/politics/globe-politics-insider/?service=rss", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The Globe And Mail</h2><ul>");
 
         var CTV = new newssource(document.getElementById("ctvFeed"), "http://www.ctvnews.ca/rss/politics/ctvnews-ca-politics-public-rss-1.822302", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From CTV News </h2><ul>");
 
+        
+       
 
-
+ //CODE FOR THIS ADAPTED FROM GOOGLE
         function cbcrssfeedsetup() {
             var feedpointer = new google.feeds.Feed(CBC.feedurl)
             feedpointer.setNumEntries(CBC.feedlimit)
@@ -451,28 +588,27 @@
         }
 
 
-        $(document).on('pageinit', '#page02', function () {
+        $(document).on('pageinit', '#page03', function () {
 
             cbcrssfeedsetup();
         });
 
-        $(document).on('pageinit', '#page03', function () {
+        $(document).on('pageinit', '#page04', function () {
 
             macleansrssfeedsetup();
         });
 
-        $(document).on('pageinit', '#page04', function () {
+        $(document).on('pageinit', '#page05', function () {
 
             globeandmailrssfeedsetup();
         });
 
-        $(document).on('pageinit', '#page05', function () {
+        $(document).on('pageinit', '#page06', function () {
 
             ctvrssfeedsetup();
         });
 
-
-
+      
 
         function fullScreen() {
 

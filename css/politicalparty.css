@@ -1,9 +1,15 @@
-
+body{ 
+    position: relative;
+    overflow:hidden;
+     
+    
+}
 
 [data-role="page"]{
     height: 100% !important;
-    position:relative !important;
+    position:absolute !important;
     overflow: hidden;
+    white-space: normal;
 }
 [data-role="footer"]{
     position:fixed !important;
@@ -21,52 +27,13 @@
 
 
 
-body{
-    overflow:hidden;
-     
+.bufferpage{
+    position:absolute !important;
+    height: 10%;
+    width: 100%;
     
 }
 
-#bufferpage01{
-   
-    position:absolute !important;
-    top: auto !important; 
-    height: 10%;
-    width: 100%;
-    background-color: #BE1824;
-   
-}
-#bufferpage02{
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    background-color: #BE1824;
-   
-}
-
-#bufferpage03{
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    background-color: #E13408;
-   
-}
-
-#bufferpage04{
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    background-color: #2126C2;
-   
-}
-
-#bufferpage05{
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    background-color: #E13408;
-   
-}
 
 .Luke{
     position:relative;
@@ -83,15 +50,14 @@ body{
     z-index: 10;
     
 }
-.ui-btn{
-   
-   height: 33px;
+.ui-listview>li>a.ui-btn>p,.ui-listview>li>a.ui-btn, .ui-header .ui-title,.ui-listview>.ui-li-divider  {
+    white-space: normal;
     
 }
 
 .feedclass > div > ul > li{
     list-style-type: circle;
-    font-size: 1em;
+/*    font-size: 1em;*/
     font-weight: normal;
   
     background-size: 100%;
@@ -101,4 +67,8 @@ body{
     
     padding: 3%;
     margin-bottom: 3%;
+    
+}
+li>a>p{
+    font-size: 90%;
 }
