@@ -133,7 +133,7 @@
             
             
                 <li data-role="list-divider" style=" color: white; background-color:#4751b8; border:none;font-size: 110%">
-                   Or keyword search for more RSS feeds from a choice of news sources
+                   Find more RSS feeds from a choice of news sources
                 </li>
     <br>
     <label for="select-choice" class="select"> &nbsp; Pick a news outlet:</label>
@@ -439,14 +439,28 @@
 
     <script type="text/javascript">
         
-      //SETTING UP NEWSOURCE OBJECT
-        function newssource(feedcontainer, feedurl, feedlimit, rssoutput) {
-            this.feedcontainer = feedcontainer;
-            this.feedurl = feedurl;
-            this.feedlimit = feedlimit;
-            this.rssoutput = rssoutput;
-        }  
-        
+    
+         var feedcontainer = document.getElementById("searchresults");
+        var url;
+        var rssoutput = "<h2 style='text-align: center'>&nbsp; Your Search Returned</h2><ul>";
+             function resultsrssfeedsetup() {
+            var feedpointer = new google.feeds.Feed(url)
+            feedpointer.setNumEntries(5)
+            feedpointer.load(resultsdisplayfeed)
+
+                                            }
+                                
+
+        function resultsdisplayfeed(result) {
+            if (!result.error) {
+                var thefeeds = result.feed.entries
+                for (var i = 0; i < thefeeds.length; i++)
+                    rssoutput += "<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+                rssoutput += "</ul>"
+                feedcontainer.innerHTML = rssoutput;
+            } else
+                console.log("Error fetching feeds!");
+        }
        
        
         google.load("feeds", "1")
@@ -458,6 +472,7 @@
   console.log(searchinput);
   var query = "'site:" + newschoice + " " + searchinput + "'";
   google.feeds.findFeeds(query, findDone);
+                
             console.log(query);
 }
              
@@ -469,13 +484,25 @@ function findDone(result) {
     var content = document.getElementById('searchresults');
     var html = '<h2 style="text-align: center"> Your search returned these RSS links:</h2>';
 
+  
+       
+
     // Loop through the results and print out the title of the feed and link to
     // the url.
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 5; i++) {
       var entry = result.entries[i];
+        //      html += '<ul><li><a href="/feed/v1/' + entry.url + '">' + entry.title + '</a></li></ul>';
+        
+        url = entry.url;
+            
+    
+    
+                
         
         
-      html += '<ul><li><a href="/feed/v1/' + entry.url + '">' + entry.title + '</a></li></ul>';
+       
+        html += "<ul><li><button onclick='resultsrssfeedsetup()'>" + entry.title + "</button></li></ul>"
+      
     }
     content.innerHTML = html;
   } else{
@@ -500,12 +527,12 @@ function findDone(result) {
 
                    
             //SETTING UP NEWSOURCE OBJECT
-//        function newssource(feedcontainer, feedurl, feedlimit, rssoutput) {
-//            this.feedcontainer = feedcontainer;
-//            this.feedurl = feedurl;
-//            this.feedlimit = feedlimit;
-//            this.rssoutput = rssoutput;
-//        }
+        function newssource(feedcontainer, feedurl, feedlimit, rssoutput) {
+            this.feedcontainer = feedcontainer;
+            this.feedurl = feedurl;
+            this.feedlimit = feedlimit;
+            this.rssoutput = rssoutput;
+        }
 
         var CBC = new newssource(document.getElementById("cbcFeed"), "http://rss.cbc.ca/lineup/politics.xml", 10, "<h2 style='text-align: center'>&nbsp; Top Political News Stories From The CBC</h2><ul>");
 
