@@ -1,7 +1,9 @@
+
+html, document{
+    overflow: hidden;
+}
 body{ 
     position: relative;
-    overflow:hidden;
-     
     
 }
 
@@ -50,7 +52,7 @@ body{
     z-index: 10;
     
 }
-.ui-listview>li>a.ui-btn>p,.ui-listview>li>a.ui-btn, .ui-header .ui-title,.ui-listview>.ui-li-divider  {
+.ui-listview>li>a.ui-btn>p,.ui-listview>li>a.ui-btn, .ui-header .ui-title,.ui-listview>.ui-li-divider, .ui-btn  {
     white-space: normal;
     
 }
